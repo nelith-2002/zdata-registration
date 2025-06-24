@@ -1,12 +1,112 @@
-# React + Vite
+# ZDATA Registration Form
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a two-step user registration form built for the ZDATA Frontend Developer Internship Assessment. It features modern UI/UX, client-side validation, API integration, and smooth animations using **React**, **Framer Motion**, and **React Toastify**.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Multi-step form with animated transitions
+- Real-time validation (Full Name, Email, Phone, Passwords)
+- "Next" button disabled until inputs are valid
+- API integration with loading state and toasts
+- Smooth animated progress bar based on input completion
+- Responsive, accessible, and visually polished design
+- Clean, scalable code with modular folder structure
 
-## Expanding the ESLint configuration
+## Project Structure
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```
+src/
+├── api/                 # Axios instance
+│   └── axiosInstance.js
+├── components/          # Reusable UI components
+│   ├── Button.jsx
+│   ├── TextInput.jsx
+│   └── ProgressBar.jsx
+├── context/             # Global form context
+│   └── FormContext.jsx
+├── pages/               # Form steps
+│   ├── Step1.jsx
+│   └── SecurityDetails.jsx
+├── services/            # API service
+│   └── registerService.js
+├── utils/               # Validation helpers
+│   └── validation.js
+├── App.jsx              # Main app logic
+├── index.jsx            # Entry point
+└── index.css            # Styling
+```
+
+## Technologies Used
+
+- **React** (with Vite)
+- **React Context API**
+- **Framer Motion** for animations
+- **React Toastify** for notifications
+- **Axios** for API calls
+- **Custom form validation**
+
+---
+
+## API Integration
+
+- **Endpoint**: `POST /api/register`
+- **Payload Example**:
+
+```json
+{
+  "fullName": "John Doe",
+  "email": "john@example.com",
+  "phone": "1234567890",
+  "password": "yourpassword"
+}
+```
+
+## Getting Started
+
+1. **Clone the repo:**
+
+```bash
+git clone https://github.com/nelith-2002/zdata-registration.git
+cd zdata-registration
+```
+
+2. **Install dependencies:**
+
+```bash
+npm install
+```
+
+3. **Set environment variables:**
+
+Create a `.env` file in the root:
+
+```
+REACT_APP_API_BASE_URL=https://your-api-base.com
+```
+
+4. **Run the app:**
+
+```bash
+npm run dev
+```
+
+---
+
+## Assessment Coverage
+
+This project meets **all criteria** in the PDF, including:
+
+- Form validation
+- Error handling
+- Animated UI
+- Clean code and structure
+- API communication
+
+---
+
+## 📩 Author
+
+**Name:** Nelith Nethsanda
+**Position Applied:** Frontend Developer Intern  
+**Email:** nelithnethsanda2002@gmail.com
+**GitHub:** https://github.com/nelith-2002
