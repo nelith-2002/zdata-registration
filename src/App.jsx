@@ -12,6 +12,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 
 
 function App() {
+  // Destructure global state from context
   const {
     formData,
     setFormData,
@@ -24,7 +25,7 @@ function App() {
   } = useContext(FormContext);
 
   
-
+ // Handle Step 1 "Next" button logic with validation
   const handleNext = () => {
     const newErrors = validateStep1(formData);
     setErrors(newErrors);
@@ -33,6 +34,7 @@ function App() {
     }
   };
 
+  // Handle "Back" navigation from Step 2 to Step 1
   const handleBack = () => setStep(1);
 
   const handleSubmit = async () => {
